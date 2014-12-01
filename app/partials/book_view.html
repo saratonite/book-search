@@ -1,0 +1,17 @@
+<div class="col-md-8">
+	<h2>{{bookData.Title}} <small>{{bookData.SubTitle}}</small></h2>
+	<img ng-src="{{bookData.Image}}">
+	<p>{{bookData.Description}}</p>
+	<table class="table">
+		<tr>
+			<th>Author : </t><td>{{bookData.Author}}</td>
+		</tr>
+		<tr>
+			<th>Year : </t><td>{{bookData.Year}}</td>
+		</tr>
+		<tr>
+			<th>Publisher : </th> <td>{{bookData.Publisher}}</td>
+		</tr>
+	</table>
+	<a ng-href="{{bookData.Download}}" class="btn btn-primary">Download</a>
+</div>

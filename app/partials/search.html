@@ -1,0 +1,49 @@
+
+<h1><a href="#">BooksApp</a></h1>
+<div class="row">
+	<div class="col-md-8">
+		<div>
+			<form class="form">
+				<div class="form-group">
+					<input type="text" ng-model="search_term" class="form-control" />
+				</div>
+				<div class="form-group">
+				<button ng-click="hitSearch()"  ng-show="search_term" type="button" class="btn btn-success" >Search Book</button>
+				</div>
+			</form>
+			
+		</div>
+		<p class="alert alert-info" ng-show="!total && searched"> No books found.</p>
+		<span ng-show="total"> Results :{{total}} {{total_pages}}</span>
+
+		<!-- Pagination -->
+		<nav>
+		  <ul class="pagination">
+		    <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+		    <li><a href="#/search/{{search_term}}/1">1</a></li>
+		    <li><a href="#/search/{{search_term}}/2">2</a></li>
+		    <li><a href="#/search/{{search_term}}/3">3</a></li>
+		    <li><a href="#/search/{{search_term}}/4">4</a></li>
+		    <li><a href="#/search/{{search_term}}/5">5</a></li>
+		    <li><a href="#/search/{{search_term}}/6"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+		  </ul>
+		  <ul ng-repeat="page in pages">
+		  	<li>ddd{{page}}</li>
+		  </ul>
+		</nav
+		<!-- End Pagination -->
+		<ul ng-repeat="book in books">
+
+	<div class="media">
+	  <a class="media-left media-middle" href="#book/{{book.ID}}">
+	    <img height="80px"  ng-src="{{book.Image}}" alt="...">
+
+	  </a>
+	  <div class="media-body">
+	    <h4 class="media-heading"><a class="media-left media-middle" href="#book/{{book.ID}}">{{book.Title}}</a></h4>
+	      {{book.Description}}
+	  </div>
+	</div>
+</ul>
+	</div>
+</div>
