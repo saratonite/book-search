@@ -1,14 +1,14 @@
 
-<h1>BooksApp</h1>
+<h1>BookSearch</h1>
 <div class="row ">
 	<div class="col-md-8 col-md-offset-2">
 		<div>
-			<form class="form">
+			<form class="form" style="margin-top: 20%;" ng-submit="hitSearch()">
 				<div class="form-group">
-					<input type="text" ng-model="search_term" class="form-control" ng-submit="search()" />
+					<input type="text" placeholder="nodejs" ng-model="search_term" class="form-control" ng-submit="search()" />
 				</div>
 				<div class="form-group">
-				<button ng-click="hitSearch()" ng-enter="search()"  ng-show="search_term" type="button" class="btn btn-success" >Search Book</button>
+				<button ng-click="hitSearch()" ng-enter="search()"  ng-show="search_term" type="submit" class="btn btn-success" >Search Book</button>
 				</div>
 			</form>
 			

@@ -2,6 +2,7 @@ app.controller('searchController',['$scope','BookService','$routeParams','$locat
 	//alert("Hello");
 	
 		//console.log($routeParams.page);
+		$scope.searched=false;
 		$scope.search=function(){
 		$scope.search_term=$routeParams.term;
 		var resp=BookService.search($scope.search_term,$routeParams.page);
@@ -11,10 +12,10 @@ app.controller('searchController',['$scope','BookService','$routeParams','$locat
 			$scope.total=data.Total;
 			$scope.books=data.Books;
 			$scope.total_pages=0;
-			//$scope.pages[];
+			$scope.pages=Array();
 			if($scope.total>0){
 				$scope.total_pages=Math.ceil(data.Total/10);
-				for(i=1;i<=total_pages;i++){
+				for(i=1;i<=$scope.total_pages;i++){
 					$scope.pages.push(i);
 				}
 			}
@@ -25,6 +26,7 @@ app.controller('searchController',['$scope','BookService','$routeParams','$locat
 	}
 
 	$scope.hitSearch=function(){
+		$scope.searched=false;
 		$location.path('/search/'+$scope.search_term);
 	}
 
