@@ -1,10 +1,10 @@
 <div class="row" ng-controller="SearchCtrl">
-	<div class="form">
+	<div class="form-inline">
 		<input type="text" class="form-control" ng-model="q">
 	</div>
 
 	<div class="row">
-		<div class="col-md-4" ng-repeat="book in data.Books">
+		<div class="clear fix col-md-2 " ng-repeat="book in data.Books">
 			<img ng-src="{{book.Image}}">
 			<h3>{{book.Title}}</h3>
 			<p>{{book.Description}}</p>
