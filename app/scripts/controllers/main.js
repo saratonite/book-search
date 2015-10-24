@@ -8,10 +8,17 @@
  * Controller of the bookSearchApp
  */
 angular.module('bookSearchApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', function ($scope,$location) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    $scope.q = "php";
+
+    $scope.hitSearch = function (){
+    	alert( $location.absUrl());
+    	$location.path('/search/'+$scope.q)
+    }
+
   });
