@@ -17,7 +17,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angularSpinner',
+    'toastr'
   ])
   .config(function ($routeProvider,$httpProvider) {
     // Hack CORS

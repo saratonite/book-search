@@ -17,8 +17,8 @@ angular.module('bookSearchApp')
     $scope.q = "php";
 
     $scope.hitSearch = function (){
-    	alert( $location.absUrl());
-    	$location.path('/search/'+$scope.q)
+    	//alert( $location.absUrl());
+    	$location.path('search/'+$scope.q)
     }
 
   });

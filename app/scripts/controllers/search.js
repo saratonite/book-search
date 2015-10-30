@@ -8,24 +8,34 @@
  * Controller of the bookSearchApp
  */
 angular.module('bookSearchApp')
-  .controller('SearchCtrl', function ($scope,$routeParams,$location,book) {
+  .controller('SearchCtrl', function ($scope,$routeParams,$location,Book,usSpinnerService,toastr) {
 
 
   	/*
   	
   	Fetch seatch results from server
   	 */
+  	console.log("SearchCtrl");
   	$scope.fetch = function() {
+  		usSpinnerService.spin('spinner-1');
   		$scope.q = $routeParams.keyword;
   		$scope.data = {};
-  		book.search($scope.q)
+  		Book.search($scope.q)
   		.success(function(response,status){
   			console.log(status);
   			$scope.data = response;
+  			setTimeout(function(){
+  		    usSpinnerService.stop('spinner-1');
+  			toastr.success(response.Total+" Results found");
+
+  			},1234);
+
   			
   		})
   		.error(function(error,status){
   			console.log(status);
+  		usSpinnerService.stop('spinner-1');
+
   			alert('Err');
   		});
 
