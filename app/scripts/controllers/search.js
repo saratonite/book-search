@@ -33,10 +33,12 @@ angular.module('bookSearchApp')
   			
   		})
   		.error(function(error,status){
-  			console.log(status);
-  		usSpinnerService.stop('spinner-1');
 
-  			alert('Err');
+      if(status== -1) {
+        toastr.error("Connection Error !");
+      }
+  		usSpinnerService.stop('spinner-1');
+      
   		});
 
   	}

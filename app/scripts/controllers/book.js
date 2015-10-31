@@ -27,7 +27,10 @@ angular.module('bookSearchApp')
 
 
   			})
-  			.error(function(){
+  			.error(function(status){
+          if(status == -1) {
+            toastr.error("Connection Error !");
+          }
           setTimeout(function(){
             usSpinnerService.stop('bs-load-details');
           },1234);
