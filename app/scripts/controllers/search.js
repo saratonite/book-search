@@ -24,9 +24,15 @@ angular.module('bookSearchApp')
   		.success(function(response,status){
   			console.log(status);
   			$scope.data = response;
+
   			setTimeout(function(){
   		    usSpinnerService.stop('spinner-1');
-  			toastr.success(response.Total+" Results found");
+         // alert(localStorage.getItem('_bs_lastquery'));
+
+        if(localStorage.getItem('_bs_lastquery') != $scope.q) {
+          localStorage.setItem('_bs_lastquery',$scope.q);
+          toastr.success(response.Total+" Results found");
+        }
 
   			},1234);
 
@@ -35,7 +41,7 @@ angular.module('bookSearchApp')
   		.error(function(error,status){
 
       if(status== -1) {
-        toastr.error("Connection Error !");
+        toastr.error("Connection Error !");3
       }
   		usSpinnerService.stop('spinner-1');
       

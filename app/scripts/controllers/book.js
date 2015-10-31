@@ -8,7 +8,7 @@
  * Controller of the bookSearchApp
  */
 angular.module('bookSearchApp')
-  .controller('BookCtrl', function ($scope,$location,$routeParams,Book,usSpinnerService) {
+  .controller('BookCtrl', function ($scope,$location,$routeParams,Book,usSpinnerService,toastr) {
 
   	$scope.bookId = $routeParams.bookId;
 
