@@ -1,30 +1,9 @@
-<!DOCTYPE html>
-<html ng-app="app">
-<head>
-	<title>BookSearch App</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<style type="text/css">
+<!doctype html> <html> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.dd8484d4.css"> <link rel="stylesheet" href="styles/main.966c3a76.css"> </head> <body ng-app="bookSearchApp"> <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <!-- Add your site or application content here --> <div class="header"> <div class="navbar navbar-default" role="navigation"> <div class="container"> <div class="navbar-header"> <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#/">bookSearch</a> </div> <div class="collapse navbar-collapse" id="js-navbar-collapse"> <ul class="nav navbar-nav"> <li class="active"><a href="#/">Home</a></li> <li><a ng-href="#/about">About</a></li> <li><a ng-href="#/">Contact</a></li> </ul> </div> </div> </div> </div> <div class="container-fluid"> <div ng-view="" class="wrap"></div> </div> <div class="footer"> <div class="container"> <p>By <a href="http://saratonite.github.io">Sartah</a> with<span class="glyphicon glyphicon-heart"></span> </p> </div> </div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-</style>
-</head>
-<body >
-<div class="container">
-	<div ng-view></div>
-</div>
-
-	
-
-<script type="text/javascript" src="app/lib/angular.min.js"></script>
-<script type="text/javascript" src="app/lib/angular-route.min.js"></script>
-<script type="text/javascript" src="app/app.js"></script>
-<!-- Loading Services -->
-<script type="text/javascript" src="app/services/book-service.js"></script>
-<!-- Loading Controllers -->
-<script type="text/javascript" src="app/controllers/main-controller.js"></script>
-<script type="text/javascript" src="app/controllers/search-controller.js"></script>
-<script type="text/javascript" src="app/controllers/book-controller.js"></script>
-<script type="text/javascript" src="app/config.js"></script>
-
-
-</body>
-</html>
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');</script> <script src="scripts/vendor.b623e32c.js"></script> <script src="scripts/scripts.e78abb1f.js"></script> </body> </html>
